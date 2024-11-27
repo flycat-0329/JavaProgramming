@@ -24,7 +24,7 @@ public class MapPrint extends JPanel{
 	
 	public MapPrint(int[][] map) {
 		if(password.equals("")) {
-			password = String.format("%04d", (int) (Math.random() * 9999) + 1);
+			password = String.format("%04d", (int) Math.random() * 9999);
 		}
 		
 		// 캐릭터 초기화 : 미로 맵에서 위치 및 이동 가능 범위
@@ -55,7 +55,7 @@ public class MapPrint extends JPanel{
 	
 	public MapPrint(int[][] map, int SCOPE) {
 		if(password.equals("")) {
-			password = String.format("%04d", (int) (Math.random() * 9999) + 1);
+			password = String.format("%04d", (int) Math.random() * 9999);
 		}
 		
 		// 캐릭터 초기화 : 미로 맵에서 위치 및 이동 가능 범위
@@ -138,8 +138,10 @@ public class MapPrint extends JPanel{
 		for (int y = this.y - SCOPE, y2 = 0; y <= this.y + SCOPE; y++, y2++) {
 			for (int x = this.x - SCOPE, x2 = 0; x <= this.x + SCOPE; x++, x2++) {
 				int index = WALL;
-				if ((0 <= x) && (x <= maxX) && (0 <= y) && (y <= maxY))
+				if ((0 <= x) && (x <= maxX) && (0 <= y) && (y <= maxY)) {
+					g.drawImage(this.image[0], x2 * SIZE, y2 * SIZE, SIZE, SIZE, null);
 					index = map[y][x];
+				}
 				g.drawImage(this.image[index], x2 * SIZE, y2 * SIZE, SIZE, SIZE, null);
 			}
 		}
