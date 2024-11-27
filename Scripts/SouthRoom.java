@@ -22,6 +22,10 @@ class SouthRoomPanel extends MapPrint {
 		while (true) {
 			// 숫자 입력 받기
 			String user = JOptionPane.showInputDialog(issue);
+			if(user == null) {
+				JOptionPane.showMessageDialog(null, "틀렸습니다.다시 한번 입력");
+				continue;
+			}
 			if (user.equals(answer)) {
 				JOptionPane.showMessageDialog(null, "맞았습니다");
 				break;
