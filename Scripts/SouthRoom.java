@@ -52,9 +52,9 @@ class SouthRoomPanel extends MapPrint {
 	}
 
 	public void quizStart() {
-		quiz1("조건식이 참이면 시행하는 명령문 증가식", "while");
+		quiz1("괄호 안의 조건식이 참이라면 시행하는 반복문", "while");
 		quiz1("문자열 자료형:", "String");
-		quiz2("클래스 객체 문자열에서 해당 인덱스 번호의 문자값을 리턴하는 함수:", "charAt");
+		quiz2("문자열에서 특정 인덱스 번호의 문자 값을 리턴하는 함수:", "charAt");
 	}
 }
 

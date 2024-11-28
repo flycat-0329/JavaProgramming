@@ -24,7 +24,8 @@ public class MapPrint extends JPanel{
 	
 	public MapPrint(int[][] map) {
 		if(password.equals("")) {
-			password = String.format("%04d", (int) Math.random() * 9999);
+			int temp = (int) (Math.random() * 9999) + 1;
+			password = temp + "";
 		}
 		
 		// 캐릭터 초기화 : 미로 맵에서 위치 및 이동 가능 범위
