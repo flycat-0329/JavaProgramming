@@ -64,7 +64,7 @@ public class WestRoom {
 			WestRoomPanel panel = new WestRoomPanel( maze );
 			// 틀에 패널 끼우고 실행 준비 완료
 			frame.getContentPane().add( panel );
-//			frame.setDefaultCloseOperation( JFrame.DISPOSE_ON_CLOSE );
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			frame.pack();
 			frame.setVisible(true);
 	}
