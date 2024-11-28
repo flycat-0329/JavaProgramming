@@ -8,13 +8,20 @@ import javax.swing.*;
 // 캐릭터 패널
 class NorthRoomPanel extends MapPrint {
 	private boolean visitedKey = false; // 키 위치 방문 여부
-	private int[][] traps = { { 2, 2 }, { 4, 6 }, { 6, 6 } }; // 함정 좌표 배열
+	private int[][] traps = {{}, {}, {}, {}, {}}; // 함정 좌표 배열
 	// 캐릭터 패널 준비
 
 	public NorthRoomPanel(int[][] map){
 		super(map);
+		
+		//보이지 않는 함정 배치
+		for (int i = 0; i < 5; i++) {
+			int qwe = (int) (Math.random() * 9) + 1;
+			int asd = (int) (Math.random() * 9) + 1;
+			traps[i] = new int[] { qwe, asd };
+		}
 	}
-	// 새 위치를 이동 가능한 위치로 조정
+
 	// 새 위치를 이동 가능한 위치로 조정
 	@Override
 	public void move(int dx, int dy) {

@@ -8,6 +8,7 @@ class MainRoomPanel extends MapPrint{
 		super(map, SCOPE);
 	}
 	
+	//방 입장 시 질문용 팝업
 	int doorOptionPane(String roomName) {
 		int res = JOptionPane.showConfirmDialog(null, 
 				roomName, "Confirm", 
@@ -16,13 +17,14 @@ class MainRoomPanel extends MapPrint{
 	}
 	
 	@Override
+	//방 입장 시 또는 비밀번호 입력 시 이벤트 처리
 	public void move(int dx, int dy) {
 		super.move(dx, dy);
 		
 		if(this.x == 5 && this.y == 5) {
 			String user = JOptionPane.showInputDialog("비밀번호를 입력해주세요");
 			if (user.equals(password)) {
-				JOptionPane.showMessageDialog(null, "축하드립니다. 탈출하셨습니다.");
+				DialogueFrame d = new DialogueFrame(1);
 				JFrame parent = (JFrame) this.getTopLevelAncestor();
 				parent.dispose();
 				return;
@@ -109,6 +111,6 @@ public class MainRoom {
 	}
 	
 	public static void main(String[] args) {
-		MainRoom mr = new MainRoom();
+		DialogueFrame d = new DialogueFrame(0);
 	}
 }

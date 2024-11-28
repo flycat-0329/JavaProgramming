@@ -40,10 +40,11 @@ class EastRoomPanel extends MapPrint {
 
 		return a;
 	}
-
+	
 	public EastRoomPanel(int[][] map) {
 		super(map, 5);
 		Timer timer = new Timer();
+		//일정 간격마다 함정 발동
 		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
 			public void run() {
@@ -73,6 +74,7 @@ class EastRoomPanel extends MapPrint {
 	}
 
 	@Override
+	//함정 밟았을 때 이벤트 추가
 	public void move(int dx, int dy) {
 		super.move(dx, dy);
 
