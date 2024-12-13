@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 class MainRoomPanel extends MapPrint{
-	public MainRoomPanel(int[][] map, String imagePath, int SCOPE) {
+	public MainRoomPanel(int[][] map, int SCOPE) {
 		super(map, SCOPE);
 	}
 	
@@ -85,7 +85,6 @@ class MainRoomPanel extends MapPrint{
 
 public class MainRoom {
 	public MainRoom(){
-		final String imagePath = "C:\\Users\\song_\\eclipse-workspace\\TheEscape\\image\\";
 		// 미로 맵을 2차원 배열로 초기화
 		int[][] map = { 
 				{ 1, 1, 1, 1, 1, 6, 1, 1, 1, 1, 1 }, 
@@ -102,7 +101,7 @@ public class MainRoom {
 		// 틀 준비
 		JFrame frame = new JFrame("중앙방");
 		// 패널 준비
-		MainRoomPanel panel = new MainRoomPanel(map, imagePath, 5);
+		MainRoomPanel panel = new MainRoomPanel(map, 5);
 		// 틀에 패널 끼우고 실행 준비 완료
 		frame.getContentPane().add(panel);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
